@@ -1,1 +1,862 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Connect Hub</title><style>body{font-family: Arial, sans-serif;margin:0;background:#f4f4f4;text-align:center;}/* Header */header{background:linear-gradient(to right,#2c3e50,#4ca1af);color:white;padding:30px;}header h1{margin:0;}header p{margin-top:5px;}/* Navigation */nav{background:#34495e;padding:12px;}nav a{color:white;margin:0 15px;text-decoration:none;font-weight:bold;}/* Sections */section{padding:40px;}.about img{width:300px;border-radius:10px;margin-top:20px;}/* Services */.services{background:#dfe9f3;}button{background:#4ca1af;color:white;padding:10px 20px;border:none;border-radius:20px;cursor:pointer;}/* Footer */footer{background:#2c3e50;color:white;padding:15px;}</style></head><body><header><h1>Connect Hub</h1><p>Connecting Students Through Media, Content & Community</p></header><nav><a href="#">Home</a><a href="#">About</a><a href="#">Services</a><a href="#">Contact</a></nav><section class="about"><h2>About Connect Hub</h2><p>Connect Hub is a student-focused digital platform designed to bring students together through media sharing, content creation, and community engagement. The platform encourages collaboration, knowledge exchange, and digital interaction among students from different academic backgrounds.</p><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"><p style="font-size:14px; color:gray; width:70%; margin:auto; margin-top:10px;">This image represents students collaborating and sharing ideas through digital media. Connect Hub provides a platform where students can create content, exchange knowledge, and build a supportive academic community.</p></section><section class="services"><h2>What We Offer</h2><p>✔ Student media sharing platform</p><p>✔ Educational blogs and digital content</p><p>✔ Online student collaboration community</p><p>✔ Networking opportunities for campus students</p><br><button onclick="join()">Join the Community</button></section><section><h2>Get in Touch</h2><p>Email: info@connecthub.com</p><p>Follow us on social media to stay connected with the student community.</p></section><footer><p>© 2026 Connect Hub. All Rights Reserved.</p></footer><script>function join(){alert("Welcome to Connect Hub! Connect with students around the world.");}</script></body></html>
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Bite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      width: 100%;
+      overflow-x: hidden;
+      background: #f7f4ed;
+      color: #1e1e1e;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 20px;
+    }
+
+    .logo h1 {
+      color: #1f5d2b;
+      font-size: 2rem;
+      font-weight: 800;
+    }
+
+    .logo p {
+      color: #4b8b58;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #1f5d2b;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 140px 20px 80px;
+      background: linear-gradient(135deg, #1f5d2b, #3f8b4e);
+      color: white;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero-text h2 {
+      color: white;
+      text-shadow: 0 5px 15px rgba(0,0,0,0.4);
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s;
+      margin-right: 10px;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #1f5d2b;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: 30px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+
+    section {
+      padding: 100px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h3 {
+      font-size: 3rem;
+      color: #1f5d2b;
+      margin-bottom: 15px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card h4 {
+      color: #1f5d2b;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+      gap: 30px;
+    }
+
+    .menu-box {
+      background: white;
+      border-radius: 25px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .menu-box h4 {
+      color: #1f5d2b;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 30px;
+    }
+
+    .plan {
+      background: white;
+      border-radius: 30px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .plan h4 {
+      color: #1f5d2b;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .review {
+      background: white;
+      border-radius: 25px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+      gap: 40px;
+    }
+
+    form {
+      background: white;
+      padding: 35px;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      background: #1f5d2b;
+      color: white;
+      border: none;
+      border-radius: 15px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #102917;
+      color: white;
+      padding: 80px 20px 30px;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 30px;
+    }
+
+    footer h4 {
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+    }
+
+    footer p, footer a {
+      color: #d6e7d8;
+      text-decoration: none;
+      line-height: 2;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    @media(max-width:768px){
+      .hero-text h2 {
+        font-size: 2.8rem;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+  </style></head>
+<body>
+<header>
+  <div class="navbar">
+    <div class="logo">
+      <h1>Campus Bite</h1>
+      <p>Healthy • Affordable • Convenient</p>
+    </div><nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#menu">Menu</a>
+  <a href="#plans">Plans</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+  </div>
+</header><section class="hero" id="home">
+  <div class="hero-container">
+    <div class="hero-text">
+      <h2>Eat Healthy.<br>Study Better.</h2>
+      <p>
+        Campus Bite provides healthy meals and wellness solutions for students.
+        Affordable, nutritious, and delivered fast across campus.
+      </p><a href="#menu" class="btn btn-primary">Explore Menu</a>
+  <a href="#contact" class="btn btn-outline">Order Now</a>
+</div>
+
+<img src="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1200&auto=format&fit=crop">
+
+  </div>
+</section><section id="about">
+  <div class="container">
+    <div class="section-title">
+      <h3>Why Campus Bite?</h3>
+      <p>Healthy living and balanced nutrition for students.</p>
+    </div><div className="min-h-screen bg-[#faf7f0] text-[#1c1c1c] font-sans scroll-smooth">
+  
+  <header className="sticky top-0 z-50 bg-white shadow-md border-b border-green-100">
+    <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div>
+        <h1 className="text-3xl font-bold text-green-800">Campus Bite</h1>
+        <p className="text-sm text-green-600">Healthy • Affordable • Convenient</p>
+      </div>
+
+      <nav className="hidden md:flex gap-6 font-medium text-sm">
+        <a href="#home" className="hover:text-green-700">Home</a>
+        <a href="#about" className="hover:text-green-700">About</a>
+        <a href="#menu" className="hover:text-green-700">Menu</a>
+        <a href="#plans" className="hover:text-green-700">Plans</a>
+        <a href="#reviews" className="hover:text-green-700">Reviews</a>
+        <a href="#contact" className="hover:text-green-700">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  
+  <section
+    id="home"
+    className="relative overflow-hidden bg-gradient-to-br from-green-900 to-green-700 text-white"
+  >
+    <div className="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span className="bg-white/20 px-4 py-2 rounded-full text-sm inline-block mb-6">
+          Student Wellness & Healthy Lifestyle
+        </span>
+
+        <h2 className="text-5xl md:text-6xl font-black leading-tight mb-6">
+          Eat Healthy.
+          <br />
+          Study Better.
+        </h2>
+
+        <p className="text-lg text-green-100 mb-8 leading-relaxed">
+          Campus Bite delivers nutritious, affordable, and delicious meals to students.
+          Fuel your body, improve your focus, and maintain a balanced lifestyle.
+        </p>
+
+        <div className="flex flex-wrap gap-4">
+          <a
+            href="#menu"
+            className="bg-white text-green-800 px-8 py-4 rounded-2xl font-bold hover:scale-105 transition"
+          >
+            Explore Menu
+          </a>
+
+          <a
+            href="#contact"
+            className="border border-white px-8 py-4 rounded-2xl font-bold hover:bg-white hover:text-green-800 transition"
+          >
+            Order Now
+          </a>
+        </div>
+      </div>
+
+      <div className="relative">
+        <img
+          src="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1200&auto=format&fit=crop"
+          alt="Healthy Food"
+          className="rounded-[2rem] shadow-2xl object-cover h-[500px] w-full"
+        />
+      </div>
+    </div>
+  </section>
+
+  {/* ABOUT */}
+  <section id="about" className="max-w-7xl mx-auto px-6 py-24">
+    <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <img
+          src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1200&auto=format&fit=crop"
+          alt="Healthy Lifestyle"
+          className="rounded-[2rem] shadow-xl"
+        />
+      </div>
+
+      <div>
+        <h3 className="text-4xl font-black text-green-900 mb-6">
+          Why Campus Bite?
+        </h3>
+
+        <div className="space-y-5 text-lg text-gray-700 leading-relaxed">
+          <p>
+            Campus Bite is a health-focused student food brand built to support wellness,
+            productivity, and healthy living on campus.
+          </p>
+
+          <p>
+            Our mission is to provide nutritious meals at affordable prices while helping
+            students maintain energy, focus, and a balanced lifestyle.
+          </p>
+
+          <div className="grid grid-cols-2 gap-4 mt-8">
+            <div className="bg-white p-5 rounded-2xl shadow">
+              <h4 className="font-bold text-green-700 text-xl">Healthy Meals</h4>
+              <p className="text-sm mt-2">Fresh ingredients and balanced nutrition.</p>
+            </div>
+
+            <div className="bg-white p-5 rounded-2xl shadow">
+              <h4 className="font-bold text-green-700 text-xl">Affordable</h4>
+              <p className="text-sm mt-2">Student-friendly prices and meal plans.</p>
+            </div>
+
+            <div className="bg-white p-5 rounded-2xl shadow">
+              <h4 className="font-bold text-green-700 text-xl">Fast Delivery</h4>
+              <p className="text-sm mt-2">Quick campus-wide delivery service.</p>
+            </div>
+
+            <div className="bg-white p-5 rounded-2xl shadow">
+              <h4 className="font-bold text-green-700 text-xl">Lifestyle</h4>
+              <p className="text-sm mt-2">Encouraging better habits and wellness.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="menu" className="bg-green-50 py-24 px-6">
+    <div className="max-w-7xl mx-auto">
+      <div className="text-center mb-16">
+        <h3 className="text-5xl font-black text-green-900 mb-4">Our Menu</h3>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          Nutritious meals, snacks, and drinks made specially for student wellness and daily energy.
+        </p>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-10">
+        {Object.entries(menuItems).map(([category, items]) => (
+          <div key={category} className="bg-white rounded-[2rem] p-8 shadow-lg">
+            <h4 className="text-3xl font-bold text-green-800 mb-8">{category}</h4>
+
+            <div className="space-y-5">
+              {items.map((item) => (
+                <div
+                  key={item.name}
+                  className="flex justify-between items-center border-b pb-4"
+                >
+                  <span className="font-medium text-lg">{item.name}</span>
+                  <span className="font-bold text-green-700">{item.price}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="plans" className="max-w-7xl mx-auto px-6 py-24">
+    <div className="text-center mb-16">
+      <h3 className="text-5xl font-black text-green-900 mb-4">Subscription Plans</h3>
+      <p className="text-gray-600 text-lg">
+        Flexible meal plans tailored for students.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-8">
+      {plans.map((plan) => (
+        <div
+          key={plan.title}
+          className="bg-white rounded-[2rem] p-10 shadow-xl border border-green-100 hover:-translate-y-2 transition"
+        >
+          <h4 className="text-3xl font-black text-green-800 mb-4">{plan.title}</h4>
+          <div className="text-4xl font-black mb-4">{plan.price}</div>
+          <p className="text-gray-600 mb-8">{plan.desc}</p>
+
+          <button className="w-full bg-green-700 text-white py-4 rounded-2xl font-bold hover:bg-green-800 transition">
+            Choose Plan
+          </button>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  
+  <section className="bg-gradient-to-r from-green-800 to-green-700 text-white py-24 px-6">
+    <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h3 className="text-5xl font-black mb-6">
+          Healthy Lifestyle For Students
+        </h3>
+
+        <div className="space-y-5 text-lg leading-relaxed text-green-50">
+          <p>
+            Healthy eating improves concentration, mood, productivity, and academic performance.
+          </p>
+
+          <p>
+            Campus Bite promotes balanced nutrition, energy, and wellness for students living busy campus lives.
+          </p>
+
+          <ul className="space-y-3 mt-6">
+            <li>✓ Better focus during lectures and study sessions</li>
+            <li>✓ Improved energy and physical wellness</li>
+            <li>✓ Affordable healthy food options</li>
+            <li>✓ Better productivity and mental performance</li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <img
+          src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200&auto=format&fit=crop"
+          alt="Healthy Food"
+          className="rounded-[2rem] shadow-2xl"
+        />
+      </div>
+    </div>
+  </section>
+
+  {/* REVIEWS */}
+  <section id="reviews" className="max-w-7xl mx-auto px-6 py-24">
+    <div className="text-center mb-16">
+      <h3 className="text-5xl font-black text-green-900 mb-4">Customer Reviews</h3>
+      <p className="text-gray-600 text-lg">
+        What students are saying about Campus Bite.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-8">
+      {reviews.map((review) => (
+        <div key={review.name} className="bg-white shadow-xl rounded-[2rem] p-8">
+          <div className="text-yellow-500 text-2xl mb-4">★★★★★</div>
+          <p className="text-gray-700 leading-relaxed mb-6">“{review.text}”</p>
+          <h4 className="font-bold text-green-800">{review.name}</h4>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* ORDER */}
+  <section className="bg-green-50 py-24 px-6">
+    <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h3 className="text-5xl font-black text-green-900 mb-6">
+          Order With QR Code
+        </h3>
+
+        <p className="text-lg text-gray-700 leading-relaxed mb-8">
+          Scan the QR code to place an order, contact Campus Bite, or follow our social media pages.
+        </p>
+
+        <div className="bg-white rounded-[2rem] p-8 shadow-xl w-fit">
+          <img
+            src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://campusbite.com"
+            alt="QR Code"
+            className="w-60 h-60"
+          />
+        </div>
+      </div>
+
+      <div>
+        <img
+          src="https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?q=80&w=1200&auto=format&fit=crop"
+          alt="Delivery"
+          className="rounded-[2rem] shadow-2xl"
+        />
+      </div>
+    </div>
+  </section>
+
+  {/* CONTACT */}
+  <section id="contact" className="max-w-7xl mx-auto px-6 py-24">
+    <div className="grid md:grid-cols-2 gap-12">
+      <div>
+        <h3 className="text-5xl font-black text-green-900 mb-6">Contact Us</h3>
+
+        <div className="space-y-6 text-lg text-gray-700">
+          <div className="bg-white shadow rounded-2xl p-6">
+            <h4 className="font-bold text-green-800 text-xl mb-2">Phone Number</h4>
+            <p>00065298736 / 10355688354</p>
+          </div>
+
+          <div className="bg-white shadow rounded-2xl p-6">
+            <h4 className="font-bold text-green-800 text-xl mb-2">Email Address</h4>
+            <p>campusbite01@gmail.com</p>
+          </div>
+
+          <div className="bg-white shadow rounded-2xl p-6">
+            <h4 className="font-bold text-green-800 text-xl mb-2">Business Hours</h4>
+            <p>Monday - Saturday</p>
+            <p>8:00 AM - 8:00 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-[2rem] shadow-xl p-8">
+        <h4 className="text-3xl font-bold text-green-800 mb-6">
+          Send A Message
+        </h4>
+
+        <form className="space-y-5">
+          <input
+            type="text"
+            placeholder="Your Name"
+            className="w-full border rounded-xl p-4 outline-none focus:ring-2 focus:ring-green-600"
+          />
+
+          <input
+            type="email"
+            placeholder="Your Email"
+            className="w-full border rounded-xl p-4 outline-none focus:ring-2 focus:ring-green-600"
+          />
+
+          <textarea
+            rows="5"
+            placeholder="Your Message"
+            className="w-full border rounded-xl p-4 outline-none focus:ring-2 focus:ring-green-600"
+          ></textarea>
+
+          <button
+            type="submit"
+            className="bg-green-700 text-white px-8 py-4 rounded-2xl font-bold hover:bg-green-800 transition w-full"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  
+  <footer className="bg-green-950 text-white py-16 px-6">
+    <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
+      <div>
+        <h4 className="text-3xl font-black mb-4">Campus Bite</h4>
+        <p className="text-green-100 leading-relaxed">
+          Healthy meals and wellness solutions for students.
+        </p>
+      </div>
+
+      <div>
+        <h5 className="font-bold text-xl mb-4">Quick Links</h5>
+        <div className="space-y-3 text-green-100">
+          <a href="#home" className="block">Home</a>
+          <a href="#menu" className="block">Menu</a>
+          <a href="#plans" className="block">Plans</a>
+          <a href="#contact" className="block">Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <h5 className="font-bold text-xl mb-4">Wellness Goals</h5>
+        <div className="space-y-3 text-green-100">
+          <p>Healthy Living</p>
+          <p>Balanced Nutrition</p>
+          <p>Student Wellness</p>
+          <p>Better Lifestyle</p>
+        </div>
+      </div>
+
+      <div>
+        <h5 className="font-bold text-xl mb-4">Contact</h5>
+        <div className="space-y-3 text-green-100">
+          <p>00065298736 / 10355688354</p>
+          <p>campusbite01@gmail.com</p>
+          <p>Campus Wide Delivery</p>
+        </div>
+      </div>
+    </div>
+
+    <div className="border-t border-green-800 mt-12 pt-8 text-center text-green-200">
+      © 2026 Campus Bite. All Rights Reserved.
+    </div>
+  </footer>
+</div>
+
+<section id="menu">
+  <div class="container">
+    <div class="section-title">
+      <h3>Our Menu</h3>
+      <p>Healthy meals, snacks, and drinks.</p>
+    </div><div class="menu-grid">
+  <div class="menu-box">
+    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1200&auto=format&fit=crop" style="width:100%;border-radius:20px;margin-bottom:20px;">
+    <h4>Healthy Breakfast</h4>
+    <div class="menu-item"><span>Oats with Fruits & Nuts</span><strong>₦1,500</strong></div>
+    <div class="menu-item"><span>Egg & Veg Sandwich</span><strong>₦1,800</strong></div>
+    <div class="menu-item"><span>Yogurt Fruit Parfait</span><strong>₦1,500</strong></div>
+  </div>
+
+  <div class="menu-box">
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop" style="width:100%;border-radius:20px;margin-bottom:20px;">
+    <h4>Smoothies & Drinks</h4>
+    <div class="menu-item"><span>Detox Juice</span><strong>₦1,500</strong></div>
+    <div class="menu-item"><span>Berry Smoothie</span><strong>₦1,800</strong></div>
+    <div class="menu-item"><span>Fresh Orange Juice</span><strong>₦1,500</strong></div>
+  </div>
+  <div class="menu-box">
+    <h4>Breakfast</h4>
+    <div class="menu-item"><span>Oats with Fruits & Nuts</span><strong>₦1,500</strong></div>
+    <div class="menu-item"><span>Egg & Veg Sandwich</span><strong>₦1,800</strong></div>
+    <div class="menu-item"><span>Yogurt Fruit Parfait</span><strong>₦1,500</strong></div>
+  </div>
+
+  <div class="menu-box">
+    <h4>Meal Packs</h4>
+    <div class="menu-item"><span>Chicken & Brown Rice</span><strong>₦2,500</strong></div>
+    <div class="menu-item"><span>Grilled Chicken & Veggies</span><strong>₦2,800</strong></div>
+    <div class="menu-item"><span>Beef Stir-fry & Rice</span><strong>₦2,500</strong></div>
+    <div class="menu-item"><span>Plantain & Egg Sauce</span><strong>₦2,000</strong></div>
+  </div>
+</div>
+
+  </div>
+</section><section id="plans">
+  <div class="container">
+    <div class="section-title">
+      <h3>Subscription Plans</h3>
+    </div><div class="plans">
+  <div class="plan">
+    <h4>Daily Plan</h4>
+    <div class="price">₦2,500</div>
+    <p>1 Meal + Drink + Snack</p>
+  </div>
+
+  <div class="plan">
+    <h4>Weekly Plan</h4>
+    <div class="price">₦12,000</div>
+    <p>5 Meals + Drinks + Snacks</p>
+  </div>
+
+  <div class="plan">
+    <h4>Monthly Plan</h4>
+    <div class="price">₦45,000</div>
+    <p>20 Meals + Drinks + Snacks</p>
+  </div>
+</div>
+
+  </div>
+</section><section id="reviews">
+  <div class="container">
+    <div class="section-title">
+      <h3>Student Reviews</h3>
+    </div><div class="cards">
+  <div class="review">
+    <h4>★★★★★</h4>
+    <p>Campus Bite helped me stay healthy during exams.</p>
+  </div>
+
+  <div class="review">
+    <h4>★★★★★</h4>
+    <p>Healthy, affordable and very convenient for students.</p>
+  </div>
+
+  <div class="review">
+    <h4>★★★★★</h4>
+    <p>Best smoothies and healthy meal packs on campus.</p>
+  </div>
+</div>
+
+  </div>
+</section><section id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h3>Contact Us</h3>
+    </div><div class="contact-wrapper">
+  <div>
+    <div class="card">
+      <h4>Phone</h4>
+      <p>00065298736 / 10355688354</p>
+    </div>
+
+    <br>
+
+    <div class="card">
+      <h4>Email</h4>
+      <p>campusbite01@gmail.com</p>
+    </div>
+  </div>
+
+  <form>
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <textarea rows="5" placeholder="Your Message"></textarea>
+    <button>Send Message</button>
+  </form>
+</div>
+
+  </div>
+</section><footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Campus Bite</h4>
+      <p>Healthy meals and wellness solutions for students.</p>
+    </div><div>
+  <h4>Quick Links</h4>
+  <a href="#home">Home</a><br>
+  <a href="#menu">Menu</a><br>
+  <a href="#plans">Plans</a><br>
+  <a href="#contact">Contact</a>
+</div>
+
+<div>
+  <h4>Wellness Goals</h4>
+  <p>Healthy Living</p>
+  <p>Balanced Nutrition</p>
+  <p>Student Wellness</p>
+</div>
+
+<div>
+  <h4>Contact</h4>
+  <p>00065298736 / 10355688354</p>
+  <p>campusbite01@gmail.com</p>
+</div>
+
+  </div>  <div class="copyright">
+    © 2026 Campus Bite. All Rights Reserved.
+  </div>
+</footer>
+</body>
+</html>
